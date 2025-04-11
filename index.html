@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Couple Website Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav id="main-nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#Projects" class="nav-link">Projects</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#WebEx" class="nav-link">Web Examples</a>
+        <a href="#faqs" class="nav-link">FAQs</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <h1>Couple Web Design Studio</h1>
+      <h3>Custom websites made for lovers, dreamers, and forever memories.</h3>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        We create personalized web pages for couples, from love letters and
+        birthday websites to photo albums and more. If you can imagine it and it
+        can be a static website, we can bring it to life.
+      </p>
+    </section>
+
+    <section id="Projects">
+      <h2>Projects</h2>
+      <div class="portfolio-item">
+        <h3>Love Letter Websites</h3>
+        <p>Expressing your feelings through online web pages.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>Photo Album</h3>
+        <p>Collection of pictures of you or your partner</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>Birthday Greeting Site</h3>
+        <p>Surprise site with music, photos, video greetings, and more.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>Photo Timeline</h3>
+        <p>Putting memorable photos in a webpage with its date.🤗</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <ul>
+        <li>❤️ Custom Couple Websites</li>
+        <li>🎂 Birthday or Anniversary Sites</li>
+        <li>📸 Photo & Video Gallery</li>
+        <li>💌 Love Letter Features</li>
+        <li>📲 Mobile Responsive Design</li>
+      </ul>
+    </section>
+
+    <section id="WebEx">
+      <h2>Website Examples</h2>
+      <div class="reviews">
+        <div class="review">
+          <a href="https://lovecodehub.github.io/LoveLetter/">Click to see</a>
+          <span>Love Letter</span>
+        </div>
+        <div class="review">
+          <a href="https://lovecodehub.github.io/Photo-TimeLine/"
+            >Click to see</a
+          >
+          <span>Photo Timeline</span>
+        </div>
+        <div class="review">
+          <a href="https://lovecodehub.github.io/PhotoAlbum/">Click to see</a>
+          <span>Photo Album</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="faqs" class="faqs">
+      <h2>FAQs</h2>
+      <div class="faq-item">
+        <h3>How long does it take to finish a website?</h3>
+        <p>
+          Most websites are completed within 3–7 days, depending on complexity.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I request specific features?</h3>
+        <p>
+          Yes! You can request any design or feature ideas you'd like to
+          include.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Is the website mobile-friendly?</h3>
+        <p>
+          Absolutely. All websites are optimized for both desktop and mobile
+          devices.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>How much does a custom couple website cost?</h3>
+        <p>
+          Prices vary based on the features you need. Message me and I'll send
+          you a free quote!
+        </p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Let's Make Your Love Story Shine ✨</h2>
+      <p>
+        Start your journey with a custom website crafted just for you and your
+        special someone.
+      </p>
+      <a href="#contact">Get Started</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form
+        action="https://formspree.io/f/mrbpjzzn"
+        method="POST"
+        id="contactForm"
+        onsubmit="submitForm(event)"
+      >
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="message-box" id="responseMessage"></div>
+      <h3>
+        If the respond is taking to long you can click the icons below to send a
+        message in this social media platforms.
+      </h3>
+      <div class="social-icons">
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/louis_badilla/"
+            title="Instagram"
+            class="instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100075422376138"
+            title="Facebook"
+            class="facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="mailto:epibadilla7@gmail.com" title="Gmail"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Couple Web Design Studio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

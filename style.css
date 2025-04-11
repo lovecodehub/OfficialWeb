@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* Add smooth scrolling to the entire document */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #f1f1f1;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+body.menu-open {
+  overflow: hidden;
+}
+header {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  padding: 1.5rem 1rem;
+  color: white;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  padding-top: 4rem;
+}
+header h1,
+h3 {
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  text-align: center;
+  background: linear-gradient(
+    to right,
+
+    #7873f5,
+    #ffa67e,
+    #585dfe,
+    #00c9c8
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 4s linear infinite;
+}
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+h2,
+h3 {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile menu toggle */
+/* Mobile menu toggle - hidden by default on large screens */
+.menu-toggle {
+  display: none; /* Hide by default on large screens */
+  background: none;
+  border: none;
+  color: #ffff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 5px;
+
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  margin: 0;
+}
+
+/* For the navigation menu */
+#main-nav {
+  /* Your existing styles for main-nav on large screens */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; /* Changed from flex-direction: wrap to flex-wrap: wrap */
+  width: 250px;
+  height: 100vh;
+  background-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive styles */
+
+/* Change navigation to slide-in menu on smaller screens */
+#main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 99;
+  padding-top: 70px; /* Space for the menu toggle */
+  padding-bottom: 20px; /* Add bottom padding */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+#main-nav.active {
+  transform: translateX(0);
+}
+
+.nav-link {
+  color: #ffffff; /* White text for dark background */
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  width: 100%; /* Full width of the menu */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle highlight on hover */
+}
+
+/* Your existing media query styles */
+nav {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+nav a {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+section {
+  padding: 1.5rem 1rem;
+}
+
+section {
+  padding: 2rem 1rem;
+  min-height: 50vh;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.portfolio-item {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+footer {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+input,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+button {
+  padding: 0.8rem;
+  border: none;
+  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 1rem;
+}
+.message-box {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.reviews {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 600px;
+}
+.review {
+  border-left: 4px solid #24dea9;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.review p {
+  font-style: italic;
+}
+.review span {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+.review a {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s ease;
+}
+.review a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.cta {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+.cta h2 {
+  margin-bottom: 1rem;
+}
+.cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.faqs {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.faq-item {
+  margin-bottom: 1.5rem;
+}
+.faq-item h3 {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.faq-item h3:hover {
+  background: #43e97b;
+  -webkit-background-clip: text;
+}
+.faq-item p {
+  display: none;
+  margin-top: 0.5rem;
+  color: #ddd;
+  padding: 0 0.5rem;
+}
+
+/* Services section styling */
+#services ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#services li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+#services li:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav.active {
+    max-height: 300px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .portfolio-item,
+  .review,
+  .faq-item {
+    padding: 1rem 0.5rem;
+  }
+
+  .cta,
+  .reviews,
+  .faqs {
+    padding: 1.5rem 1rem;
+  }
+
+  #main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh !important;
+    max-height: none !important;
+    background: linear-gradient(
+      to right,
+      #0f0c29,
+      #302b63,
+      #24243e
+    ); /* Match your header gradient */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    /* Don't include any properties that might affect the main page */
+  }
+
+  #main-nav.active {
+    transform: translateX(0);
+  }
+
+  /* Create an overlay behind the menu */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 0; /* Below the menu but above everything else */
+  }
+
+  /* Adjust nav links to fit better */
+  #main-nav a.nav-link {
+    color: white;
+    display: block;
+    width: 85%;
+    padding: 10px 15px; /* Reduced padding */
+    margin-bottom: 5px; /* Reduced margin */
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.95rem; /* Slightly smaller font */
+  }
+}
+
+/* Ensure hover and active states work */
+#main-nav a.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#main-nav a.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 1rem 0.75rem;
+  }
+
+  .portfolio-item,
+  .review,
+  .faq-item,
+  #services li {
+    margin-bottom: 1rem;
+  }
+
+  form {
+    padding: 0 0.5rem;
+  }
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  opacity: 1;
+}
+.social-icons a.instagram:hover {
+  color: #e1306c; /* Instagram gradient red */
+}
+
+.social-icons a.facebook:hover {
+  color: #4267b2; /* Facebook blue */
+}
+#main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 99;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+#main-nav.active {
+  transform: translateX(0);
+}
+
+#main-nav a.nav-link {
+  color: white;
+  display: block;
+  width: 90%; /* Slightly less than full width for visual spacing */
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#main-nav a.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+#main-nav a.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+}
